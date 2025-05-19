@@ -1,0 +1,110 @@
+Algoritmo "primeiro"
+
+Var
+nome: caracter
+Rnome: caracter
+senha: inteiro
+Rsenha: inteiro
+opcao: inteiro
+opcao2: inteiro
+saldo: real
+emprestimo: real
+deposito: real
+retirada: real
+Remprestimo: real
+saldoatual: real
+Inicio
+saldoatual <- 0
+emprestimo <- 50000
+repita
+escreval ("------ Menu Banco Visualg Sal ------")
+         escreval("1-Fazer cadastro.")
+         escreval("2-entrar na conta bancária.")
+         escreval("3-Sair.")
+         leia (opcao2)
+         
+         escolha opcao2
+                 caso 1
+                      escreval ("Qual é o seu nome?")
+                               leia (nome)
+                      escreval ("Qual senha deseja colocar?")
+                               leia (senha)
+                 limpatela()
+                 caso 2
+         repita
+      escreval ("-----------------------")
+      escreval ("Digite seu nome.")
+      leia (Rnome)
+      escreval ("Digite sua senha.")
+      leia (Rsenha)
+      escreval ("-----------------------")
+      se (Rsenha <> senha) ou (Rnome <> nome) entao
+         escreval("Algo está incorreto, Tente novamente!")
+         fimse
+       ate (Rsenha = senha) e (Rnome = nome)
+      se Rsenha = senha entao
+fimse
+         repita
+
+               escreval ("------Seja Bem-vindo ", nome, "------")
+               escreval ("1-Ver saldo.")
+               escreval ("2-Ver empréstimo.")
+               escreval ("3-Depositar.")
+               escreval ("4-Retirar.")
+               escreval ("5-Empréstimo.")
+               escreval ("6-Sair do Banco.")
+                  leia (opcao)
+
+                    escolha opcao
+
+                         caso 1
+                             limpatela()
+                             escreval ("Seu saldo atual é de:", saldoatual)
+                         caso 2
+                             limpatela()
+                             escreval ("Seu empréstimo é de até:", emprestimo)
+                         caso 3
+                             limpatela()
+                              escreval ("Quanto dinheiro deseja depositar?")
+                              leia (deposito)
+                              saldoatual <- saldoatual + deposito
+                                   escreval(" Agora Seu saldo é de:", saldoatual)
+                              escreval ("-----------------------")
+                         caso 4
+                              limpatela()
+                              escreval ("Quanto de dinheiro deseja retirar?")
+                              leia (retirada)
+                                       se retirada > saldoatual entao
+                                          escreval("Você não tem dinheiro o suficiente para retirar!")
+                                       senao
+                                            saldoatual <- saldoatual - retirada
+                                            escreval("Seu saldo agora é de:", saldoatual)
+                                            fimse
+                         caso 5
+                               limpatela()
+                              escreval ("Você tem " , emprestimo , " de emprestimo.")
+                              escreval  ("Quanto deseja pegar?")
+                              leia (Remprestimo)
+                                   se emprestimo < Remprestimo entao
+                                      escreval ("Você não tem empréstimos o suficiente!")
+                         fimse
+                              emprestimo <- emprestimo - Remprestimo
+                              saldoatual <- saldoatual + Remprestimo
+                              escreval ("Agora seu saldo é de ", saldoatual, ".")
+                              escreval ("E você possui", emprestimo, " de empréstimo.")
+                         caso 6
+                              limpatela()
+                              escreval ("Até mais. . .")
+                         outrocaso
+                                  escreval ("Escolha uma opção válida!")
+                    fimescolha
+      ate opcao = 6
+                  caso 3
+                       escreval("Até mais. . .")
+                  outrocaso
+                           escreval("Digite uma opção válida")
+                  fimescolha
+      ate (opcao2 = 2) ou (opcao2 = 3)
+
+
+Fimalgoritmo
